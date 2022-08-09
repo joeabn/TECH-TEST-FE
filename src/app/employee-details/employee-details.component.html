@@ -1,8 +1,49 @@
-<header>
-  <span>EmployeeName</span>
-</header>
-<div class="content">
-  <span>Fill the content</span>
+<div class='content'>
+  <nz-card style='width: 300px;margin-top: 16px' [nzLoading]='loading'
+           [nzActions]='[actionSetting, actionEdit, actionEllipsis]'>
+    <nz-card-meta
+      [nzAvatar]='avatarTemplate'
+      [nzTitle]="employee.firstName + ' ' + employee.lastName"
+      [nzDescription]='employee.position'
+    ></nz-card-meta>
+    <!--    <span>createdAt : {{employee.createdAt * 1000 | date }}</span>-->
+    <nz-divider [nzDashed]=' true'></nz-divider>
+    <nz-list >
+      <nz-list-item >
+        <span nz-typography>Date Of Birth</span>
+        {{employee.dateOfBirth }}
+      </nz-list-item>
+      <nz-list-item >
+        <span nz-typography>Start Date</span>
+        {{employee.startDate }}
+      </nz-list-item>
+      <nz-list-item >
+        <span nz-typography>End Date</span>
+        {{employee.endDate }}
+      </nz-list-item>
+      <nz-list-item >
+        <span nz-typography>Created At</span>
+        {{employee.createdAt }}
+      </nz-list-item>
+    </nz-list>
+  </nz-card>
+
+
+  <ng-template #avatarTemplate>
+    <nz-avatar nzSrc='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'></nz-avatar>
+  </ng-template>
+  <ng-template #actionSetting>
+    Settings
+    <i nz-icon nzType='setting'></i>
+  </ng-template>
+  <ng-template #actionEdit>
+    Edit
+    <i nz-icon nzType='edit'></i>
+  </ng-template>
+  <ng-template #actionEllipsis>
+    More
+    <i nz-icon nzType='ellipsis'></i>
+  </ng-template>
 </div>
 <!-- <footer>
   <button (click)="update()">Update</button>

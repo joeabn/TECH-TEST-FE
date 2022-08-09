@@ -1,6 +1,17 @@
-<header>
-  <span>Employees</span>
-</header>
+
 <div class="content">
-  <span>Fill the content</span>
+  <nz-table #basicTable [nzData]="employees">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data" [routerLink]="['/employees', data.id]">
+      <td>{{ data.firstName + ' ' + data.lastName }}</td>
+      <td>{{ data.position }}</td>
+    </tr>
+    </tbody>
+  </nz-table>
 </div>
