@@ -1,10 +1,50 @@
-<header>
-  <span>Login</span>
-</header>
-<div class="content">
-  <input placeholder="username" />
-  <input placeholder="password" />
+
+<div class='content'>
+  <nz-card class='auth-card' >
+
+    <form nz-form [formGroup]='loginForm' (ngSubmit)='login()'>
+
+      <h2 class='auth-page-title'>
+        Sign in to your account
+      </h2>
+
+      <div class='input-group'>
+
+        <nz-form-item>
+          <nz-form-label nz-col nzSpan='24' nzFor='user'>Email</nz-form-label>
+          <nz-form-control [nzErrorTip]='emailErrorTpl'>
+            <input class='auth-input' type='text' nz-input formControlName='email' placeholder='Email' />
+            <ng-template #emailErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('required')">Please enter your Email</ng-container>
+              <ng-container *ngIf="control.hasError('pattern')">Please enter a valid Email</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label nz-col nzSpan='24' nzFor='password'>password</nz-form-label>
+          <nz-form-control [nzErrorTip]='emailErrorTpl'>
+            <input class='auth-input' type='password' autocomplete nz-input formControlName='password' placeholder='Password' />
+            <ng-template #emailErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('required')">Please enter your Password</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+
+      </div>
+
+      <button [nzLoading]='isLoading' nz-button type='submit' class='action-button-accent'>Login</button>
+
+    </form>
+    <div class='register-link'>
+      Don't have an account?
+      <br><a routerLink='/signup'>Register now</a>
+    </div>
+
+
+  </nz-card>
+
 </div>
-<footer>
-  <button (click)="login()">login</button>
-</footer>
+
+
+

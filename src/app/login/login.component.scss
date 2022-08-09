@@ -1,0 +1,78 @@
+h2{
+  font-family: Jeko-Bold;
+}
+.auth-page-container{
+  background-color: var(--acteos-deep-blue);
+  background-position: center;
+  background-size: cover;
+  //height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.auth-page{
+  padding-bottom: 3%;
+}
+.acteos-logo{
+  width: 150px;
+}
+.auth-footer{
+  color: #ffffff;
+  font-size: 10px;
+  padding-bottom: 3vh;
+}
+.acteos-copyright{
+  padding-left: 3vw;
+}
+
+.space-20{
+  min-height: 20px;
+}
+
+//  Auth pages styles
+
+.auth-card{
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+.auth-page-title{
+  text-align: center;
+  font-size: 30px;
+  color: var(--acteos-deep-blue);
+  margin-top: 5%;
+}
+.input-group{
+  //margin-top: -7%;
+}
+.register-link{
+  font-size: 14px;
+  color: var(--acteos-deep-blue);
+  text-align: center;
+  padding-top: 3vh;
+}
+.password-label{
+  width: 100%;
+}
+.login-form-forgot{
+  font-size: 12px;
+  //font-weight: 600;
+}
+.action-button-accent{
+  margin-bottom: 5%;
+}
+.acteos-logo-container{
+  margin: 5% 0;
+}
+//  Mobile resolution styling
+@media screen and (max-width: 767px) {
+  .auth-card{
+    margin: 0 15px;
+  }
+  .input-group{
+    margin-top: 0;
+  }
+}
