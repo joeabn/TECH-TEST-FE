@@ -1,31 +1,33 @@
 <div class='content'>
   <nz-card style='width: 300px;margin-top: 16px' [nzLoading]='loading'
            [nzActions]='[actionSetting, actionEdit, actionEllipsis]'>
-    <nz-card-meta
-      [nzAvatar]='avatarTemplate'
-      [nzTitle]="employee.firstName + ' ' + employee.lastName"
-      [nzDescription]='employee.position'
-    ></nz-card-meta>
-    <!--    <span>createdAt : {{employee.createdAt * 1000 | date }}</span>-->
-    <nz-divider [nzDashed]=' true'></nz-divider>
-    <nz-list >
-      <nz-list-item >
-        <span nz-typography>Date Of Birth</span>
-        {{employee.dateOfBirth }}
-      </nz-list-item>
-      <nz-list-item >
-        <span nz-typography>Start Date</span>
-        {{employee.startDate }}
-      </nz-list-item>
-      <nz-list-item >
-        <span nz-typography>End Date</span>
-        {{employee.endDate }}
-      </nz-list-item>
-      <nz-list-item >
-        <span nz-typography>Created At</span>
-        {{employee.createdAt }}
-      </nz-list-item>
-    </nz-list>
+    <ng-container *ngIf='!loading'>
+      <nz-card-meta
+
+        [nzAvatar]='avatarTemplate'
+        [nzTitle]="employee.firstName + ' ' + employee.lastName"
+        [nzDescription]='employee.position'
+      ></nz-card-meta>
+      <nz-divider [nzDashed]=' true'></nz-divider>
+      <nz-list>
+        <nz-list-item>
+          <span nz-typography>Date Of Birth</span>
+          {{ employee.dateOfBirth * 1000 | date   }}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography>Start Date</span>
+          {{employee.startDate   * 1000 | date }}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography>End Date</span>
+          {{employee.endDate  * 1000 | date}}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography>Created At</span>
+          {{employee.createdAt  * 1000 | date}}
+        </nz-list-item>
+      </nz-list>
+    </ng-container>
   </nz-card>
 
 

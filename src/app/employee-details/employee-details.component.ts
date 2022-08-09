@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../models/employee';
 import { EmployeesService } from '../services/Employees/employees.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { Timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-employee-details',
@@ -27,7 +28,6 @@ export class EmployeeDetailsComponent implements OnInit {
 
   getEmployee(id: number) {
     this.employeeService.getEmployeeById(id).subscribe(fetchedEmployee => {
-        console.log(fetchedEmployee);
         this.loading = false;
         if (fetchedEmployee == null) {
           this._nzNotificatonService.create('error', 'Error', 'Failed To Fetch Employee');

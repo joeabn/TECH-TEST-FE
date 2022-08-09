@@ -6,8 +6,8 @@ export interface Employee {
   lastName: string;
   position: string;
   isActive: boolean;
-  createdAt: Timestamp<number>;
-  dateOfBirth: Timestamp<number>;
-  endDate: Timestamp<number>;
-  startDate: Timestamp<number>;
+  createdAt: number;
+  dateOfBirth: number;
+  endDate: number;
+  startDate: number;
 }
